@@ -1,4 +1,4 @@
-# Pilgrimage Travel Site - Travel Sri Lanka
+# Sardha Travel Site - Travel Sri Lanka
 
 **Travel Sri Lanka** is a website that provides detailed information about pilgrimage sites, tours, and attractive locations in Sri Lanka. Through this website, users can plan their trips, view photos and videos, and check reviews from other users.
 
