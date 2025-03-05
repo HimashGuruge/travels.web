@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trincomalee</title>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <style>
+    
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+     background-color: #ccc;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      font-family: 'Noto Sans Sinhala', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      padding: 20px;
+      text-align: justify;
+      backdrop-filter: blur(8px);
+    }
+
+    /* Header Styling */
+    header {
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: #2c3e50;
+    }
+
+    /* Section Styling */
+    section {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: justify;
+    }
+
+    /* Subheading Styling */
+    h2,
+    h3 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    /* Paragraph Styling */
+    p {
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+
+    /* Unordered List Styling */
+    ul {
+      list-style-type: none;
+      margin-left: 20px;
+      margin-bottom: 15px;
+      line-height: 1.8;
+      color: #34495e;
+    }
+
+    .ways li {
+      font-weight: bold;
+    }
+
+    ul ul {
+      margin: 0.8rem 0;
+      padding-left: 1.5rem;
+    }
+
+    /* Footer Styling */
+    footer {
+      text-align: justify;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #7f8c8d;
+    }
+
+    /* Responsive Grid for Album Items */
+    .album-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      justify-content: center;
+      overflow-x: auto;
+    }
+
+    /* Album Item (Card) */
+    .album-item {
+      width: 100%;
+      max-width: 300px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background: #fff;
+      margin: 0 auto;
+      text-align: justify;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 15px;
+      flex-shrink: 0;
+    }
+
+    .album-item h3{
+      text-align: center;
+    }
+
+    /* Image Styling */
+    .album-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px 10px 0 0;
+      transition: transform 0.3s ease;
+    }
+
+    .album-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Text Styling inside Cards */
+    .album-item h3 {
+      font-size: 1.2em;
+      color: #2c3e50;
+      margin: 10px 0;
+      padding: 0 10px;
+    }
+
+    .album-item p {
+      font-size: 1em;
+      color: #555;
+      padding: 0 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Form Styling */
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: justify;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    form input[type="submit"] {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #34495e;
+    }
+
+    /* Trip Facilities Section Styling */
+    .trip-facilities {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .trip-facilities h2 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .trip-facilities ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .trip-facilities ul li {
+      margin-bottom: 10px;
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    .trip-facilities ul li::before {
+      content: "✔";
+      color: #27ae60;
+      margin-right: 10px;
+    }
+
+    /* Trip Details Section Styling */
+    .trip-details {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #f8f9fa;
+      border-radius: 10px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      font-family: 'Noto Sans Sinhala', 'Arial', sans-serif;
+      text-align: justify;
+    }
+
+    .trip-details li {
+      text-align: center;
+    }
+
+    .trip-details h2 {
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .facilities-section,
+    .itinerary-section {
+      background: #fff;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      text-align: justify;
+    }
+
+    h3 {
+      color: #3498db;
+      margin: 1rem 0;
+      font-size: 1.3rem;
+    }
+
+    strong {
+      color: #e74c3c;
+    }
+
+    .booking-info {
+      background: #fff9e6;
+      padding: 1.2rem;
+      border-left: 4px solid #f1c40f;
+      margin: 1.5rem 0;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .itinerary-section li {
+      margin: 0.8rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .trip-details {
+        padding: 1rem;
+        margin: 1rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+
+    .ccenter {
+      text-align: center;
+    }
+
+
+
+/*google map*/
+
+.map-container {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.map-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.map-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.googlemap{
+  text-align: center;
+  color: #e74c3c;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+  </style>
+  <script>
+    (function () {
+      emailjs.init("B3mhw9l_-MpSUqQZ_"); // Initialize EmailJS with your public key
+    })();
+  </script>
+</head>
+
+
+<body>
+
+ 
+    <section>
+        <h3>ත්‍රිකුණාමලය</h3>
+        <p>ත්‍රිකුණාමලය යනු ශ්‍රී ලංකාවේ නැගෙනහිර වෙරළ තීරයේ පිහිටා ඇති සුන්දර නගරයකි. එය එහි ඉතිහාසය, සංස්කෘතිය සහ ස්වභාවික සුන්දරත්වය නිසා ජනප්‍රිය සංචාරක ගමනාන්තයක් ලෙස සැලකේ.</p>
+      
+        <h3>ඉතිහාසය</h3>
+        <p>ත්‍රිකුණාමලයේ ඉතිහාසය වසර 2500 කට වඩා ඈතට දිව යයි. එය පුරාණ කාලයේ "ගෝකර්ණ" ලෙස හඳුන්වනු ලැබූ අතර, එය වැදගත් වරායක් සහ වෙළඳ මධ්‍යස්ථානයක් ලෙස ක්‍රියා කළේය. ත්‍රිකුණාමලය විවිධ රාජධානි යටතේ පාලනය වූ අතර, එහි සංස්කෘතිය හා ගෘහ නිර්මාණ ශිල්පය විවිධ බලපෑම්වලට ලක් විය.</p>
+      
+        <h3>සංස්කෘතිය</h3>
+        <p>ත්‍රිකුණාමලය විවිධ සංස්කෘතීන්ගේ එකතුවක් ලෙස සැලකේ. මෙහි සිංහල, දෙමළ සහ මුස්ලිම් ප්‍රජාවන් ජීවත් වන අතර, ඔවුන්ගේ අද්විතීය සම්ප්‍රදායන් සහ සිරිත් විරිත් ඇත. ත්‍රිකුණාමලය කෝනස්වරම් කෝවිල වැනි වැදගත් ආගමික ස්ථානවලට නිවහනකි.</p>
+      
+        <h3>ස්වභාවික සුන්දරත්වය</h3>
+        <p>ත්‍රිකුණාමලය එහි ස්වභාවික සුන්දරත්වය සඳහා ප්‍රසිද්ධය. මෙහි සුන්දර වෙරළ තීරයන්, නිල් පැහැති මුහුද සහ හරිත කඳු දැකිය හැකිය. ත්‍රිකුණාමලය ආශ්‍රිතව පිහිටා ඇති Pigeon Island National Park යනු ජනප්‍රිය සංචාරක ස්ථානයකි, එහිදී විවිධ සමුද්‍ර ජීවීන් දැක ගත හැකිය.</p>
+      
+        <h3>සංචාරක ආකර්ෂණ</h3>
+        <ul>
+          <li>කෝනස්වරම් කෝවිල: ත්‍රිකුණාමලයේ පිහිටා ඇති ප්‍රසිද්ධ හින්දු කෝවිලකි.</li>
+          <li>Pigeon Island National Park: විවිධ සමුද්‍ර ජීවීන් සඳහා නිවහනකි.</li>
+          <li>Nilaveli Beach: සුන්දර වෙරළ තීරයකි.</li>
+          <li>Uppuveli Beach: තවත් ජනප්‍රිය වෙරළ තීරයකි.</li>
+          <li>Fort Frederick: ත්‍රිකුණාමලයේ ඉතිහාසය විදහා දක්වන ඓතිහාසික ස්ථානයකි.</li>
+        </ul>
+      
+        <h3>ත්‍රිකුණාමලය සංචාරය කිරීමට හොඳම කාලය</h3>
+        <p>ත්‍රිකුණාමලය සංචාරය කිරීමට හොඳම කාලය මැයි සිට සැප්තැම්බර් දක්වා වේ. මෙම කාලය තුළ කාලගුණය වියළි හා හිරු එළිය සහිත වේ.</p>
+      
+
+      </section>
+
+
+
+
+
+
+
+  
+
+
+<!-- 
+album section -->
+
+<section class="album-container">
+    <div>
+      <h2 class="album-title">ත්‍රිකුණාමලයෙන් සැලකිය යුතු ස්ථාන</h2>
+      <div class="album-grid">
+        <div class="album-item">
+          <img src="https://www.e-thaksalawa.moe.gov.lk/content/sub_programs/helanetha/province/ep/trinco/img/kovil.jpg" alt="කෝනස්වරම් කෝවිල">
+          <h3>Koneswaram Temple</h3>
+          <p>ත්‍රිකුණාමලයේ පිහිටා ඇති ප්‍රසිද්ධ හින්දු කෝවිලකි. එය ත්‍රිකෝණමලය අර්ධද්වීපයේ උසම ස්ථානයේ පිහිටා ඇති අතර, එය ත්‍රිකුණාමලයේ වැදගත්ම ආගමික ස්ථානයකි.</p>
+        </div>
+        <div class="album-item">
+          <img src="https://i.ytimg.com/vi/m_Re_qyLux4/maxresdefault.jpg" alt="Nilaveli Beach">
+          <h3>Pigeon Island National Park</h3>
+          <p>විවිධ සමුද්‍ර ජීවීන් සඳහා නිවහනකි. මෙය කුඩා දූපතක් වන අතර, එය ත්‍රිකුණාමලය වෙරළට ආසන්නව පිහිටා ඇත. මෙම උද්‍යානය කොරල්පර සහ විවිධ මසුන්ගෙන් සමන්විත වේ.</p>
+        </div>
+        <div class="album-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQh2BFu14XlNR9v3cpEooGNuwv-hNF5GXOXw&s" alt="Nilaveli Beach">
+          <h3>Nilaveli Beach</h3>
+          <p>සුන්දර වෙරළ තීරයකි. එය ත්‍රිකුණාමලය නගරයට උතුරින් පිහිටා ඇති අතර, එහි සුදු වැලි සහ පැහැදිලි ජලය නිසා ප්‍රසිද්ධය.</p>
+        </div>
+
+        <div class="album-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXXRHL4O6o7ucr7Xylz21rt66s8U26ZWB_sA&s" alt="Fort Frederick">
+          <h3>Fort Frederick</h3>
+          <p>ත්‍රිකුණාමලයේ ඉතිහාසය විදහා දක්වන ඓතිහාසික ස්ථානයකි. එය 17 වන සියවසේදී පෘතුගීසීන් විසින් ඉදිකරන ලද අතර, පසුව ලන්දේසීන් සහ බ්‍රිතාන්‍යයන් විසින් එය අත්පත් කර ගන්නා ලදී.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- emmed map -->
+  <section>
+ 
+    <h3 class="googlemap">Location</h3>
+
+
+    <div class="map-wrapper">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63122.128283530204!2d81.17201704890425!3d8.583207114028799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afbbcb6902dbe27%3A0x7de76a7a331b0fbb!2sTrincomalee!5e0!3m2!1sen!2slk!4v1739870278239!5m2!1sen!2slk"
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+
+
+
+
+
+
+
+
+  </section>
+
+  <!-- Trip Details Section -->
+  <section class="trip-details">
+    <div class="facilities-section">
+        <h3>සපයනු ලබන සේවාවන්:</h3>
+        <ul>
+            <li>රත්මලාන සිට ආරම්භ කරනු ලබන AC බස් රථය</li>
+            <li>උදේ ආහාරය සපයනු ලැබේ</li>
+            <li>දවල් ආහාරය ඇතුළත් වේ</li>
+            <li>බීම සඳහා ප්රමාණවත් ජලය ලබා දෙනු ලැබේ</li>
+            <li>සවස් තේ සහ කේක් සපයා ඇත</li>
+        </ul>
+        <p><strong>මුළු ගාස්තුව: රු.6500/=</strong> (ආසන 29 පමණක්)</p>
+    </div>
+
+    <div class="itinerary-section">
+        <h3>ගමන් මාර්ගය සහ කාලසටහන:</h3>
+        <ul>
+            <li>පහත ස්ථාන හරහා ගමන් කරනු ලබේ:
+                <ul class="ways">
+                    <li>මොරටුව</li>
+                    <li>කටුබැද්ද</li>
+                    <li>රත්මලාන</li>
+                    <li>මවුන්ට් ලැවීනියා</li>
+                    <li>දෙහිවල</li>
+                    <li>බොරැස්ගමුව</li>
+                    <li>මහරගම</li>
+                    <li>නුගේගොඩ</li>
+                    <li>කෝට්ටේ</li>
+                    <li>බත්තරමුල්ල</li>
+                    <li>රාජගිරිය</li>
+                    <li>කැලණිය</li>
+                    <li>කිරිබත්ගොඩ</li>
+                    <li>කඩවත</li>
+                    <li>කුරුණෑගල</li>
+                    <li>ත්‍රිකුණාමලය</li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+
+    
+
+    <div class="visit-places-section">  <h3>අප යනු ලබන ස්ථාන: </h3> 
+        <ul>
+            <li>උමන්දාව</li>
+            <li>දඹුලු විහාරය</li>
+            <li>කන්තලේ වැව</li>
+            <li>කෝනේෂ්වරම් කෝවිල</li>
+            <li>ගිරිගඩු සෑය</li>
+            <li>නිලාවේලි මුහුදු තීරය නැරඹීම (පරවි දූපත)</li>
+            <li>උණු වතුර ළිං</li>
+            <li>වෙල්ගම් වෙහෙර පන්සල</li>
+            <li>මාබල් මුහුදු තීරය</li>
+            <li>ත්‍රිකුණාමල වරාය</li>
+            <li>කින්නිය පාලම</li>
+        </ul>
+    </div>
+
+    <div class="booking-info">
+        <p>ආසන වෙන්කිරීම් සඳහා ඉක්මන් ඇණවුම් කටයුතු කරන්න:<br>
+            <strong>0761318245 / 0710832454</strong> (Whatsapp හරහා)
+        </p>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Contact Form Section -->
+  <section>
+    <h2 class="ccenter">අප අමතන්න</h2>
+    <form id="contact-form">
+      <label for="username">පරිශීලක නාමය:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="contact1">දුරකථන අංකය 1:</label>
+      <input type="tel" id="contact1" name="contact1" required>
+
+      <label for="contact2">දුරකථන අංකය 2:</label>
+      <input type="tel" id="contact2" name="contact2" required>
+
+      <label for="email">ඊමේල් ලිපිනය:</label>
+      <input type="email" id="email" name="email" required>
+
+      <input type="submit" value="යොමන්න">
+    </form>
+
+ 
+
+
+
+
+
+    
+
+
+
+
+  </section>
+
+  <footer>
+    <p>© 2025 Trincomalee Information Page</p>
+  </footer>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+     (function() {
+        emailjs.init("B3mhw9l_-MpSUqQZ_"); // Initialize EmailJS with your public key
+     })();
+  
+     document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+  
+        // Collect form data
+        var username = document.getElementById("username").value.trim();
+        var contact1 = document.getElementById("contact1").value.trim();
+        var contact2 = document.getElementById("contact2").value.trim();
+        var email = document.getElementById("email").value.trim();
+  
+        // Validate email format
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test(email)) {
+            alert("ඊමේල් ලිපිනය වැරදියි! කරුණාකර නිවැරදි ඊමේල් ලිපිනයක් යොදන්න.");
+            return;
+        }
+  
+        // Validate phone numbers (10 to 15 digits)
+        var phonePattern = /^[0-9]{10,15}$/;
+  
+        if (!phonePattern.test(contact1)) {
+            console.error("පළමු දුරකථන අංකය වැරදියි: " + contact1);
+            alert("දුරකථන අංකය වැරදියි! කරුණාකර නිවැරදි 10-15 ඉලක්කම් අංකයක් යොදන්න. (පළමු අංකය)");
+            return;
+        }
+  
+        if (!phonePattern.test(contact2)) {
+            console.error("දෙවන දුරකථන අංකය වැරදියි: " + contact2);
+            alert("දුරකථන අංකය වැරදියි! කරුණාකර නිවැරදි 10-15 ඉලක්කම් අංකයක් යොදන්න. (දෙවන අංකය)");
+            return;
+        }
+  
+        // Create form data object
+        var formData = {
+            username: username,
+            contact1: contact1,
+            contact2: contact2,
+            email: email
+        };
+  
+        // Send email using EmailJS
+        emailjs.send("himashguruge96", "template_fzdhror", formData)
+            .then(function(response) {
+                alert("Email Sent Successfully!");
+                console.log("Email Sent:", response);
+                document.getElementById("contact-form").reset();
+            }, function(error) {
+                alert("Email Sending Failed: " + error.text);
+                console.error("Email Sending Failed:", error);
+            });
+     });
+  </script>
+  
+
+
+
+  
+</body>
+</html>

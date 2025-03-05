@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sardha Travels - පුද්ගලික චාරිකා සැලසුම්කරු</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Carousel Image Centering */
+        .carousel-item img {
+            width: 100%;
+            height: 500px; /* Set a fixed height for the carousel */
+            object-fit: cover; /* Ensures the image covers the area */
+            object-position: center; /* Centers the image */
+        }
+
+        /* Fix tight spacing between Hero and Carousel */
+        .jumbotron {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('img/header-bg.jpg');
+            background-size: cover;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            margin-bottom: 0; /* Remove default margin */
+            padding: 4rem 0; /* Add padding for better spacing */
+        }
+
+        /* Add margin below Carousel */
+        #mainCarousel {
+           
+            margin-bottom: 2rem; /* Add space below Carousel */
+        }
+
+        .card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .tour-price {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        footer {
+            background: #343a40;
+            color: white;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .carousel-inner h3, 
+.carousel-inner p {
+    color: white; /* White for better contrast */
+    font-family: sans-serif;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Shadow for better visibility */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 10px 20px;
+    border-radius: 5px; /* Smooth corners */
+    display: inline-block; /* Prevents full width */
+}
+
+/*
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+}
+*/
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Sardha Travels
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">මුල් පිටුව</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tours">චාරිකා</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">සම්බන්ධ වන්න</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- Hero Section -->
+<div class="jumbotron jumbotron-fluid text-center" style="background-image: url('https://images.pexels.com/photos/346696/pexels-photo-346696.jpeg'); background-size: cover; background-position: center; position: relative;">
+    <!-- Overlay for transparency -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>
+    
+    <!-- Content -->
+    <div class="container" style="position: relative; z-index: 1;">
+    <marquee><h1 class="display-4 text-white">සර්ධා ට්රැවල්ස් වෙත සාදරයෙන් පිළිගනිමු</h1></marquee>
+      <p class="lead text-white">ඔබගේ සිහින චාරිකා අත්දැකීම් අප සමග</p>
+    </div>
+  </div>
+
+    <!-- Carousel Section -->
+    <div id="mainCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#mainCarousel" data-slide-to="1"></li>
+            <li data-target="#mainCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/sigiriya/The+Lion's+Paws+of+Sigiriya.jpg" alt="සීගිරිය සිංහ ගිරි පර්වතය">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>ශ්‍රී ලංකාවේ පුරාවිද්‍යාත්මක අභිරහස් සහිත ස්ථානය</h3>
+                    <p>සීගිරිය හෝ සිංහගිරි (සිංහල: සීගිරිය, දෙමළ: சிகிரியா/சிங்ககிரி, උච්චාරණය: සී-ගි-රි-යා) යනු ශ්‍රී ලංකාවේ මධ්‍යම පළාතේ දඹුල්ල නගරය අසල මාතලේ දිස්ත්‍රික්කයේ පිහිටි පුරාණ ගල් බලකොටුවකි. මෙම ස්ථානය ඓතිහාසික හා පුරාවිද්‍යාත්මක වැදගත්කමකින් යුත් අතර, මීටර 180 (අඩි 590) පමණ උසැති ගල් කණුවකින් ආධිපත්‍යය දරයි.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/sigiriya/469510190_578807861359172_4028122023289476425_n.jpg" alt="සීගිරිය පුරාණ ගොඩනැගිලි">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>සීගිරිය: පුරාණ ගොඩනැගිලි විස්මය</h3>
+                    <p>සීගිරිය (සිංහල: සීගිරිය) ශ්‍රී ලංකාවේ මධ්‍යම පළාතේ, දඹුල්ල අසළ පිහිටි පුරාණ ගල් බලකොටුවකි. ක්‍රි.ව. 5 වන සියවසේදී කාශ්‍යප රජු විසින් ගොඩනැගිලි කරන ලද මෙය, සීගිරිය අප්සරා, සන්සුන් උද්‍යානයන් සහ පුරාණ ලිපි සටහන් මඟින් සංස්කෘතික විශේෂත්වයක් ඇති කරයි. 1982 දී යුනෙස්කෝ ලෝක උරුමයක් ලෙස නම් කරන ලද සීගිරිය, ශ්‍රී ලංකාවේ ප්‍රධාන සංචාරක ආකර්ශනයක් ලෙස සැලකේ.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/sigiriya/469491226_578807858025839_8650672472368347828_n.jpg" alt="සීගිරිය වනාන්තර">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>ලෝක උරුමය සහ ස්වභාවික සුන්දරත්වය</h3>
+                    <p>සීගිරියේ පරිසරය, පුරාණ ගල් බලකොටුව සමඟ අලංකාර උද්‍යානයන්, ජල පද්ධති සහ ග්‍රාෆිටි ලියවිලි මගින් විශිෂ්ට ස්වභාවික සුන්දරත්වයක් පෙන්වයි. වියළි කලාපයක දී නවීන ඉංජිනේරු ක්‍රම මගින් සැලසුම් කළ ජල සංවහන පද්ධතිය සහ උද්‍යානයන්, පුරාවිද්‍යාත්මක වටිනාකම රැකගැනීමට දායක වේ. මෙය, ඉතිහාසය හා ස්වභාවික රූපලාවණ්‍යය එකට රැසක් කරමින්, සංචාරකයන්ට අද්භුත අත්දැකීම් ලබා දෙන ස්ථානයකි.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/sigiriya/469510948_578807758025849_5724230300532937248_n.jpg" alt="සීගිරිය වනාන්තර">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>සීගිරිය වනාන්තර</h3>
+                    <p>සීගිරිය පර්වතය වටා පිහිටි සීගිරිය වනාන්තරය, දේශීය වෘක්ෂ, පක්ෂීන් සහ වෙනත් වන සතුන්ගෙන් සමන්විත සුවිශේෂී පරිසර පද්ධතියකි. මෙය සීගිරියගේ ඉතිහාසමය ස්මාරකයට අමතරව, ස්වභාවික වටිනාකම රැක ගැනීමට සහ ප්‍රදේශයේ ජල මාර්ග හා උද්‍යානයන් සමඟ එක්ව, නිස්සල සහ සාමකාමී පරිසරයක් සපයන අත්‍යවශ්‍ය කොටසකි.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">පසුපස</span>
+        </a>
+        <a class="carousel-control-next" href="#mainCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">ඊළඟ</span>
+        </a>
+    </div>
+
+    <!-- Tours Grid -->
+    <div class="container" id="tours">
+        <h2 class="text-center mb-4">චාරිකා පැකේජ</h2>
+        <div class="row">
+            <!-- Pilgrimage Tour 1 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://overatours.com/wp-content/uploads/2021/10/Ruwanweli-Maha-Seya-Anuradhapura.jpg" class="card-img-top" alt="අනුරාධපුර වන්දනා චාරිකා">
+                    <div class="card-body">
+                        <h5 class="card-title">අනුරාධපුර සංචාරය</h5>
+                        <p class="card-text">
+                            ✔ 2 දින චාරිකාව<br>
+                            ✔ AC රථවාහන සේවාව<br>
+                            ✔ හොඳම ආහාර පාන<br>
+                            ✔ ප්රවීණ මාර්ගදර්ශක
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="tour-price">රු.15,000 සිට</span>
+                            <a href="anuradapura.html" class="btn btn-primary">විස්තර</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leisure Tour 1 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/sigiriya/sigiriya.jpg" class="card-img-top" alt="සීගිරිය සංචාරක චාරිකා">
+                    <div class="card-body">
+                        <h5 class="card-title">සීගිරිය සංචාරක පැකේජය</h5>
+                        <p class="card-text">
+                            ✔ 1 දින චාරිකාව<br>
+                            ✔ පිට්ටනිය ඇතුළු ස්ථාන<br>
+                            ✔ වීඩියෝ සහ ඡායාරූප සේවා<br>
+                            ✔ කුඩා කණ්ඩායම්
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="tour-price">රු.15,000 සිට</span>
+                            <a href="sigiriya.html" class="btn btn-primary">විස්තර</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://nashaplaneta.net/asia/srilanka/images_trincomalee/trincomalee-fort-frederik-koneswaram-temple.jpg" class="card-img-top" alt="සීගිරිය සංචාරක චාරිකා">
+                    <div class="card-body">
+                        <h5 class="card-title">ත්‍රිකුණාමලය සංචාරක පැකේජය</h5>
+                        <p class="card-text">
+                            ✔ 1 දින චාරිකාව<br>
+                            ✔ පිට්ටනිය ඇතුළු ස්ථාන<br>
+                            ✔ වීඩියෝ සහ ඡායාරූප සේවා<br>
+                            ✔ කුඩා කණ්ඩායම්
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="tour-price">රු.15,000 සිට</span>
+                            <a href="triconamale.html" class="btn btn-primary">විස්තර</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/SL_Kandy_asv2020-01_img04_Queens_Hotel.jpg/640px-SL_Kandy_asv2020-01_img04_Queens_Hotel.jpg" class="card-img-top" alt="සීගිරිය සංචාරක චාරිකා">
+                    <div class="card-body">
+                        <h5 class="card-title">කෑන්ඩි සංචාරක පැකේජය</h5>
+                        <p class="card-text">
+                            ✔ 1 දින චාරිකාව<br>
+                            ✔ පිට්ටනිය ඇතුළු ස්ථාන<br>
+                            ✔ වීඩියෝ සහ ඡායාරූප සේවා<br>
+                            ✔ කුඩා කණ්ඩායම්
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="tour-price">රු.15,000 සිට</span>
+                            <a href="kandy.html" class="btn btn-primary">විස්තර</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            
+
+            <!-- Add more tour packages following same structure -->
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <footer id="contact">
+        <div class="container text-center">
+            <h3>අප සමග සම්බන්ධ වන්න</h3>
+            <p>දුරකථන: 011 2 345 678<br>
+               ලිපිනය: 123/අ, ප්රවීණ මාවත, කොළඹ 05<br>
+               ඊමේල්: info@sardhatravels.lk</p>
+            <div class="social-links">
+                <a href="#" class="text-light mx-2">Facebook</a>
+                <a href="#" class="text-light mx-2">WhatsApp</a>
+                <a href="#" class="text-light mx-2">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

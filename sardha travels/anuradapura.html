@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>anuradapura</title>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+     background-color: #ccc;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      font-family: 'Noto Sans Sinhala', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      padding: 20px;
+      text-align: justify;
+      backdrop-filter: blur(8px);
+    }
+
+    /* Header Styling */
+    header {
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: #2c3e50;
+    }
+
+    /* Section Styling */
+    section {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: justify;
+    }
+
+    /* Subheading Styling */
+    h2,
+    h3 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    /* Paragraph Styling */
+    p {
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+
+    /* Unordered List Styling */
+    ul {
+      list-style-type: none;
+      margin-left: 20px;
+      margin-bottom: 15px;
+      line-height: 1.8;
+      color: #34495e;
+    }
+
+    .ways li {
+      font-weight: bold;
+    }
+
+    ul ul {
+      margin: 0.8rem 0;
+      padding-left: 1.5rem;
+    }
+
+    /* Footer Styling */
+    footer {
+      text-align: justify;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #7f8c8d;
+    }
+
+    /* Responsive Grid for Album Items */
+    .album-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      justify-content: center;
+      overflow-x: auto;
+    }
+
+    /* Album Item (Card) */
+    .album-item {
+      width: 100%;
+      max-width: 300px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background: #fff;
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding: 15px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    /* Image Styling */
+    .album-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px 10px 0 0;
+      transition: transform 0.3s ease;
+      margin: 0 auto 15px;
+    }
+    .album-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Heading Styling inside Cards */
+    .album-item h3 {
+      font-size: 1.2em;
+      color: #2c3e50;
+      margin: 0 0 10px;
+      padding: 0 10px;
+      text-align: center;
+    }
+
+    /* Paragraph Styling inside Cards */
+    .album-item p {
+      font-size: 1em;
+      color: #555;
+      padding: 0 10px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    /* Form Styling */
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: justify;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    form input[type="submit"] {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #34495e;
+    }
+
+    /* Trip Facilities Section Styling */
+    .trip-facilities {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .trip-facilities h2 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .trip-facilities ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .trip-facilities ul li {
+      margin-bottom: 10px;
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    .trip-facilities ul li::before {
+      content: "✔";
+      color: #27ae60;
+      margin-right: 10px;
+    }
+
+    /* Trip Details Section Styling */
+    .trip-details {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #f8f9fa;
+      border-radius: 10px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      font-family: 'Noto Sans Sinhala', 'Arial', sans-serif;
+      text-align: justify;
+    }
+
+    .trip-details li {
+      text-align: center;
+    }
+
+    .trip-details h2 {
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .facilities-section,
+    .itinerary-section {
+      background: #fff;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      text-align: justify;
+    }
+
+    h3 {
+      color: #3498db;
+      margin: 1rem 0;
+      font-size: 1.3rem;
+    }
+
+    strong {
+      color: #e74c3c;
+    }
+
+    .booking-info {
+      background: #fff9e6;
+      padding: 1.2rem;
+      border-left: 4px solid #f1c40f;
+      margin: 1.5rem 0;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .itinerary-section li {
+      margin: 0.8rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .trip-details {
+        padding: 1rem;
+        margin: 1rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+
+    .ccenter {
+      text-align: center;
+    }
+
+    /* Google Map */
+    .map-container {
+      text-align: center;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+
+    .map-wrapper {
+      position: relative;
+      overflow: hidden;
+      padding-top: 56.25%; /* 16:9 aspect ratio */
+    }
+
+    .map-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .googlemap {
+      text-align: center;
+      color: #e74c3c;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 25px;
+    }
+  </style>
+  <script>
+    (function () {
+      emailjs.init("B3mhw9l_-MpSUqQZ_"); // Initialize EmailJS with your public key
+    })();
+  </script>
+</head>
+<body>
+
+
+<!-- infromation view -->
+
+    <section>
+        <h3>අනුරාධපුරය</h3>
+        <p>අනුරාධපුරය, ශ්‍රී ලංකාවේ පැරණිතම රාජධානියක් ලෙස සැලකෙන අතර, එය ක්‍රි.පූ. 4 වන සියවසේදී පිහිටුවන ලදී. මෙම නගරය ශ්‍රී ලංකාවේ පළමු අගනුවර ලෙස දිගු කාලයක් පැවතුණු අතර, එහි ඓතිහාසික හා සංස්කෘතික වටිනාකම නිසා එය ලොව පුරා ප්‍රසිද්ධ වී ඇත. අනුරාධපුරය බුද්ධාගමේ පූජනීය නගරයක් ලෙසද සැලකේ, මන්ද බුද්ධාගම ශ්‍රී ලංකාවට හඳුන්වාදුන්නේ මෙම නගරයේදී බව පැවසේ.</p>
+    
+        
+        <h3>ප්‍රධාන ලක්ෂණ</h3>
+        <ul style="list-style: disc; padding-left: 20px;">
+          <li>රුවන්වැලි සෑය: මෙම විශාල ස්තූපය අනුරාධපුරයේ ප්‍රධාන ආකර්ෂණයක් ලෙස සැලකේ. එය රජුන්ගේ ආධිපත්‍යය හා බුද්ධාගමේ බලය ප්‍රදර්ශනය කිරීම සඳහා ඉදිකරන ලදී.</li>
+          <li>අභයගිරි විහාරය: මෙම පුරාණ විහාර සංකීර්ණය බෞද්ධ භික්ෂූන් වහන්සේලාගේ භාවනා හා අධ්‍යයනය සඳහා භාවිතා කරන ලදී.</li>
+          <li>මිහින්තලේ: බුද්ධාගමේ පූජනීය ස්ථානයක් ලෙස සැලකෙන මෙම ප්‍රදේශයේ ස්තූප හා විහාර බෞද්ධ සංස්කෘතියේ උච්චතම අවස්ථාවන් පිළිබිඹු කරයි.</li>
+          <li>ජලාශ පද්ධති: වැව්, වාරිමාර්ග, සහ ජලාශ ඉදිකරන ලද්දේ කෘෂිකාර්මික කටයුතු සඳහා ජලය සැපයීම සහ නගරයේ ජල අවශ්‍යතා පිරිපහදු කිරීම සඳහාය.</li>
+          <li>ජේතවනාරාමය: ලෝකයේ ප්‍රථම භික්ෂුණී විහාරය ලෙස සැලකෙන මෙම ස්ථානය බුද්ධාගමේ මහා විහාර මාර්ගයේ සුවිශේෂී සංකල්පයක් ලෙස පිළිගැනේ.</li>
+        </ul>
+        
+    
+        <h3>අනුරාධපුරයේ ඉතිහාසය</h3>
+        <p>ක්‍රි.පූ. 4 වන සියවසේදී පණ්ඩුකාභය රජු විසින් අනුරාධපුරය අගනුවර ලෙස පිහිටුවන ලදී. මෙම නගරය 1,400 වසරකට අධික කාලයක් ශ්‍රී ලංකාවේ රාජධානියේ කේන්ද්‍රස්ථානය විය. බුද්ධාගම ශ්‍රී ලංකාවට හඳුන්වාදුන්නේ මිහින්තලේ ස්ථානයේදී අරහත් මහින්ද හිමියන්ගේ ආගමනයෙන් පසුවය.</p>
+    
+        <h3>අනුරාධපුරයේ සංරක්ෂණය</h3>
+        <p>1982 දී, අනුරාධපුරය යුනෙස්කෝ ලෝක උරුම අඩවියක් ලෙස පිළිගන්නා ලදී. මෙම ස්ථානයේ සංරක්ෂණ කටයුතු ශ්‍රී ලංකා පුරාවිද්‍යා දෙපාර්තමේන්තුව සහ ජාත්‍යන්තර සංවිධාන විසින් ක්‍රියාත්මක කරනු ලබයි. පුරාණ වාස්තු විද්‍යාත්මක නිර්මාණ සහ ජලාශ පද්ධති ප්‍රතිසංස්කරණය කිරීමට විශේෂ අවධානය යොමු කර ඇත.</p>
+    
+        <h3>සංස්කෘතික වටිනාකම</h3>
+        <p>අනුරාධපුරය ශ්‍රී ලංකාවේ සංස්කෘතික උරුමයේ හදවත ලෙස සැලකේ. වාර්ෂිකව ලොව පුරා සංචාරකයින් ලක්ෂ ගණනක් මෙම පුරාණ නගරයට පැමිණෙන අතර, එමඟින් ජාතික සංස්කෘතිය හා ඉතිහාසය පිළිබඳ අධ්‍යයනයන්ට අවස්ථාව සලසා දේ. මෙම නගරයේ පුරාවිද්‍යාත්මක සොයාගැනීම් තවමත් නව තොරතුරු ඉදිරිපත් කරමින් සිටී.</p>
+    </section>
+
+
+
+<!-- infromation view -->
+
+
+
+
+
+
+
+    <!-- Photo Album  -->
+
+
+ <section>
+    <div>
+      <h2 class="album-title">අනුරාධපුරයේ සැලකිය යුතු ස්ථාන</h2>
+      <div class="album-grid">
+        <div class="album-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/SriMahaBodiyaRanVeta.JPG/800px-SriMahaBodiyaRanVeta.JPG" alt="ජය ශ්‍රී මහා බෝධීන් වහන්සේ">
+          <h3>ජය ශ්‍රී මහා බෝධීන් වහන්සේ</h3>
+          <p>ශ්‍රී ලංකාවේ පැරණිතම බෝධි වෘක්ෂය, අනුරාධපුරයේ ජය ශ්‍රී මහා බෝධීන් වහන්සේ, බුදුදහමේ ආගමික වැදගත්කමට සාක්ෂියකි.</p>
+        </div>
+        <div class="album-item">
+          <img src="https://www.e-thaksalawa.moe.gov.lk/content/sub_programs/helanetha/province/nc/anuradapura/img/ruwanwelimahaseya.jpg" alt="රුවන්වැලි සෑය">
+          <h3>රුවන්වැලි සෑය</h3>
+          <p>අනුරාධපුරයේ ප්‍රසිද්ධ ස්තූපයක් වන රුවන්වැලි සෑය, ඉතිහාසයේ විශිෂ්ට උරුමයක් සහ පූජනීය ස්ථානයකි.</p>
+        </div>
+        <div class="album-item">
+          <img src="https://www.lakpura.com/images/LK94009853-01-E.JPG" alt="ජේතවනාරාමය">
+          <h3>ජේතවනාරාමය</h3>
+          <p>විශාල දාගැබක් වන ජේතවනාරාමය, බෞද්ධ ආගමික උරුමයක් ලෙස ලෝක උරුම ලැයිස්තුවට ඇතුළත්ය.</p>
+        </div>
+        <div class="album-item">
+          <img src="https://lh3.googleusercontent.com/p/AF1QipM_2Ozj9CBR1Hhbd18l6USy1pjyOg-0EZ57MKwH=s680-w680-h510" alt="අභයගිරිය">
+          <h3>අභයගිරිය</h3>
+          <p>අනුරාධපුරයේ දක්නට ලැබෙන අභයගිරිය දාගැබ, ගැඹුරු ආගමික සම්ප්‍රදායන් සහ ශිල්පීය උරුමයක් වේ.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+  <!-- Photo Album  -->
+
+
+
+
+  <!-- emmed map -->
+
+
+
+  <section>
+
+ 
+    <h3 class="googlemap">Location</h3>
+
+
+    <div class="map-wrapper">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126325.568682847!2d80.40331364999999!3d8.335151849999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afcf4f99360e159%3A0xc111fe9ebc6dcf0e!2sAnuradhapura!5e0!3m2!1sen!2slk!4v1739446326318!5m2!1sen!2slk"
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+
+
+
+  <!-- emmed map -->
+
+
+
+
+
+
+  </section>
+
+
+
+
+
+  <!-- Trip Details Section -->
+
+
+
+  <section class="trip-details">
+    <div class="facilities-section">
+      <h3>සපයනු ලබන සේවාවන්:</h3>
+      <ul>
+        <li>AC බස් මගින් කටුබැද්දන් උදේ 7.00 ගමන් චාරිකාව ආරම්භ කරනු ලබයි</li>
+        <li>කිරිතේ සමග උදේ ආහාර වේල් දෙකක්</li>
+        <li>දහවල් ආහාර වේල් දෙකක්</li>
+        <li>සවස තේ සමග කේක්</li>
+        <li>රාත්‍රිය ආහාර 01</li>
+        <li>Non comfortable Room (triple bed room or double beds room)</li>
+      </ul>
+      <p><strong>මුළු ගාස්තුව: රු.12,800/=</strong> (සීමිත ආසන සංඛ්‍යාවක් ඇති බැවින් ඔබගේ අසුන වෙන් කරගන්න.)</p>
+    </div>
+
+
+
+    <!-- චාරිකා වැඩසටහන -->
+
+
+
+
+
+
+
+    <div class="itinerary-section">
+      <h3>චාරිකා වැඩසටහන:</h3>
+      <ul>
+        <li><strong>පළමු දවස:</strong>  
+          <ul>
+            <li>🙏 රුවන්වැලි සෑය, ශ්‍රී මහා බෝධිය, සඳහිරු සෑය වන්දනාමාන කිරීම</li>
+            <li>🔹 ශබ්ද පූජා, සුවඳ දුම් පූජා, මල් කරඬු පූජා, අටපිරිකර ඇතුළු අනෙකුත් පූජා</li>
+          </ul>
+        </li>
+        <li><strong>දෙවැනි දවස:</strong>
+          <ul>
+            <li>🙏 ථූපාරාමය, අභයගිරිය, ලංකාරාමය, ජේතවනාරාමය, සමාධි බුද්ධ ප්‍රතිමා, ඉසුරුමුණි ඇතුළු අටමස්ථාන වල වන්දනාමාන කිරීම</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
+
+
+
+ <!-- චාරිකා වැඩසටහන -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- ගමන් මාර්ගය සහ කාලසටහන -->
+
+
+    <div class="itinerary-section">
+      <h3>ගමන් මාර්ගය සහ කාලසටහන:</h3>
+      <ul>
+        <li>පහත ස්ථාන හරහා ගමන් කරනු ලබේ:
+          <ul class="ways">
+            <li>රත්මලාන</li>
+            <li>ගල්කිස්ස</li>
+            <li>දෙහිවල</li>
+            <li>බෙල්ලන්විල</li>
+            <li>මහරගම</li>
+            <li>කොට්ටාව</li>
+            <li>නුගේගොඩ</li>
+            <li>බත්තරමුල්ල</li>
+            <li>රාජගිරිය</li>
+            <li>කිරිබත්ගොඩ</li>
+            <li>කඩවත</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+
+ <!-- ගමන් මාර්ගය සහ කාලසටහන -->
+
+
+
+
+
+
+ <!-- booking-info -->
+
+    <div class="booking-info">
+      <p><strong>📞 අමතන්න:</strong> 0710832454 / 0761318245</p>
+      <p><strong>🏢 සම්බන්ධ විය හැකි ස්ථානය:</strong> දෙහිවල කාර්යාලය</p>
+      <p><strong>🏦 බැංකු ගිණුමට මුදල් බැර කිරීමෙන් වෙන්කරවා ගැනීම සලසා ඇත.</strong></p>
+    </div>
+  </section>
+
+
+ <!-- booking-info -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Contact Form Section -->
+  <section>
+    <h2 class="ccenter">අප අමතන්න</h2>
+    <form id="contact-form">
+      <label for="username">පරිශීලක නාමය:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="contact1">දුරකථන අංකය 1:</label>
+      <input type="tel" id="contact1" name="contact1" required>
+
+      <label for="contact2">දුරකථන අංකය 2:</label>
+      <input type="tel" id="contact2" name="contact2" required>
+
+      <label for="email">ඊමේල් ලිපිනය:</label>
+      <input type="email" id="email" name="email" required>
+
+      <input type="submit" value="යොමන්න">
+    </form>
+
+ 
+
+
+
+
+
+    
+
+
+
+
+  </section>
+
+  <footer>
+    <p>© 2025 Sigiriya Information Page</p>
+  </footer>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+     (function() {
+        emailjs.init("B3mhw9l_-MpSUqQZ_"); // Initialize EmailJS with your public key
+     })();
+  
+     document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+  
+        // Collect form data
+        var username = document.getElementById("username").value.trim();
+        var contact1 = document.getElementById("contact1").value.trim();
+        var contact2 = document.getElementById("contact2").value.trim();
+        var email = document.getElementById("email").value.trim();
+  
+        // Validate email format
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test(email)) {
+            alert("ඊමේල් ලිපිනය වැරදියි! කරුණාකර නිවැරදි ඊමේල් ලිපිනයක් යොදන්න.");
+            return;
+        }
+  
+        // Validate phone numbers (10 to 15 digits)
+        var phonePattern = /^[0-9]{10,15}$/;
+  
+        if (!phonePattern.test(contact1)) {
+            console.error("පළමු දුරකථන අංකය වැරදියි: " + contact1);
+            alert("දුරකථන අංකය වැරදියි! කරුණාකර නිවැරදි 10-15 ඉලක්කම් අංකයක් යොදන්න. (පළමු අංකය)");
+            return;
+        }
+  
+        if (!phonePattern.test(contact2)) {
+            console.error("දෙවන දුරකථන අංකය වැරදියි: " + contact2);
+            alert("දුරකථන අංකය වැරදියි! කරුණාකර නිවැරදි 10-15 ඉලක්කම් අංකයක් යොදන්න. (දෙවන අංකය)");
+            return;
+        }
+  
+        // Create form data object
+        var formData = {
+            username: username,
+            contact1: contact1,
+            contact2: contact2,
+            email: email
+        };
+  
+        // Send email using EmailJS
+        emailjs.send("himashguruge96", "template_c15mi7f", formData)
+            .then(function(response) {
+                alert("Email Sent Successfully!");
+                console.log("Email Sent:", response);
+                document.getElementById("contact-form").reset();
+            }, function(error) {
+                alert("Email Sending Failed: " + error.text);
+                console.error("Email Sending Failed:", error);
+            });
+     });
+  </script>
+  
+
+
+
+  
+</body>
+</html>
